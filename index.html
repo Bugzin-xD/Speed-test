@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <html lang="en">
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Speed test</title>
+        <meta name="description" content="A simple page for test the speed from your internet/computer">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="icon" href="icon.png">
+        <style>
+            button {
+                background-color: rgb(183, 255, 255);
+                border-radius: 20px;
+                font-family: 'Montserrat', sans-serif;
+                font-size: 50px;
+                cursor: pointer;
+                padding: 5px;
+                border: 1px solid black;
+                transition: ease-in-out 0.35s;
+                display: flex;
+            }
+
+            button:hover {
+                transform: rotateZ(4.5deg);
+                font-size: 52px;
+              box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.418);
+            }
+        </style>
+    </head>
+    <body>
+        <h1 style="font-family: 'TRebuchet MS', sans-serif;">Speed test</h1>
+        <span style="font-family: sans-serif; color: red; text-decoration: underline;">Remember to deactivate the pop-up block!</span>
+        <hr>
+        <button onclick="test()">Test</button>
+        <script>function test() {
+    const URL = "test.html";
+    let TIME = 0;
+
+    const loop = setInterval(() => {
+        TIME++;
+        window.open(URL, "_blank", "width=1,height=1,left=5000,top=5000");
+    }, 0.1);
+    setTimeout(() => {
+        clearInterval(loop);
+        TIME = TIME * 10;
+        alert(`Its speed is approximately ${TIME} tabs per minute.`);
+    }, 6000);   
+}
+</script>
+    </body>
+</html>
